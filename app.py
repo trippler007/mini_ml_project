@@ -20,12 +20,16 @@ if stm.button('Predict'):
             # Convert input to float
             input_cgpa = float(input_cgpa)
             input_iq = float(input_iq)
+            # Create numpy array
+            input_features = np.array([input_cgpa, input_iq])
             # Predict
             result = model.predict(input_features)[0]
+
             # Display result
             if result == 1:
                 stm.header("Ho jayega ✅")
             else:
                 stm.header("Nhi Hoga ❌")
+
         except ValueError:
             stm.header("Please enter valid numeric values!")

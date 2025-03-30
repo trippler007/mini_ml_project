@@ -21,7 +21,7 @@ if stm.button('Predict'):
             input_cgpa = float(input_cgpa)
             input_iq = float(input_iq)
             # Create numpy array
-            input_features = np.array([input_cgpa, input_iq])
+            input_features = np.array([[input_cgpa, input_iq]])
             # Predict
             result = model.predict(input_features)[0]
 
